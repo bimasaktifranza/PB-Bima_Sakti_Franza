@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "773216795146",
+    "project_id": "createaccount-9b344",
+    "storage_bucket": "createaccount-9b344.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:773216795146:android:59ab71af619ef5d7c73df3",
+        "android_client_info": {
+          "package_name": "com.example.pemrogramanbergerak1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgoxpb6iJVZcs_zPqUmBMuaW-mOsatrkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
