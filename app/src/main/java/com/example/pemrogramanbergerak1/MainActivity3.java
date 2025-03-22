@@ -15,6 +15,7 @@ public class MainActivity3 extends AppCompatActivity {
 
         CardView cardProfile = findViewById(R.id.cardProfile);
         cardProfile.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity3.this, profileActivity.class);
