@@ -28,7 +28,6 @@
                 android:gravity="center"
                 android:paddingBottom="16dp"/>
 
-            <!-- CardView untuk Profil -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardProfile"
                 android:layout_width="match_parent"

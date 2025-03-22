@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
                 return WindowInsetsCompat.CONSUMED;
             });
+
             mAuth = FirebaseAuth.getInstance();
             username = findViewById(R.id.username);
             password = findViewById(R.id.password);
@@ -48,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
             btnLogin = findViewById(R.id.btnLogin);
             forgotPass = findViewById(R.id.LupaSandi);
             signUp= findViewById(R.id.DaftarSekarang);
-
 
             btnLogin.setOnClickListener(view -> {
                 String email = String.valueOf(username.getText()).trim();

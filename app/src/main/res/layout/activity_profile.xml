@@ -22,7 +22,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:src="@drawable/fotobima4"
-            android:contentDescription="Profile Picture"
+            android:contentDescription="Foto Profil"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"/>
 

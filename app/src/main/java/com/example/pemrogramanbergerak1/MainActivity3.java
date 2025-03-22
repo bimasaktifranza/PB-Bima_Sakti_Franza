@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
 public class MainActivity3 extends AppCompatActivity {
 
     @Override
@@ -15,7 +14,6 @@ public class MainActivity3 extends AppCompatActivity {
         setContentView(R.layout.activity_main3);
 
         CardView cardProfile = findViewById(R.id.cardProfile);
-
         cardProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,7 +23,6 @@ public class MainActivity3 extends AppCompatActivity {
         });
 
         Button btnProfile = findViewById(R.id.btn_profile);
-
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
