@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Memo"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/input_memo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tulis catatan di sini" />
+
+    <Button
+        android:id="@+id/btn_simpan_memo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Simpan" />
+
+    <Button
+        android:id="@+id/btn_kembali_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kembali ke Home"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

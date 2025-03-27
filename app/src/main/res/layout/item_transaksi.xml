@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/tv_tanggal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tanggal"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:paddingBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tv_keterangan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Keterangan"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:paddingBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tv_jumlah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jumlah"
+        android:textSize="14sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"/>
+</LinearLayout>

@@ -1,6 +1,5 @@
 package com.example.pemrogramanbergerak1;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -21,7 +20,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-
     TextInputEditText username, password;
     CheckBox checkBoxes;
     Button btnLogin;
@@ -34,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        // Inisialisasi elemen UI
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        checkBoxes = findViewById(R.id.checkbox);
+        btnLogin = findViewById(R.id.btnLogin);
+        forgotPass = findViewById(R.id.LupaSandi);
+        signUp = findViewById(R.id.DaftarSekarang);
+        mAuth = FirebaseAuth.getInstance();
+
+        // Menyesuaikan padding dengan insets
         View mainView = findViewById(R.id.main);
         if (mainView != null) {
             ViewCompat.setOnApplyWindowInsetsListener(mainView, (v, insets) -> {
@@ -41,49 +49,42 @@ public class MainActivity extends AppCompatActivity {
                 v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
                 return WindowInsetsCompat.CONSUMED;
             });
-            mAuth = FirebaseAuth.getInstance();
-            username = findViewById(R.id.username);
-            password = findViewById(R.id.password);
-            checkBoxes = findViewById(R.id.checkbox);
-            btnLogin = findViewById(R.id.btnLogin);
-            forgotPass = findViewById(R.id.LupaSandi);
-            signUp= findViewById(R.id.DaftarSekarang);
-
-            btnLogin.setOnClickListener(view -> {
-                String email = String.valueOf(username.getText()).trim();
-                String passwordUser = String.valueOf(password.getText()).trim();
-
-                if (email.isEmpty()) {
-                    username.setError("Email tidak boleh kosong!");
-                    return;
-                }
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    username.setError("Format email tidak valid!");
-                    return;
-                }
-                if (passwordUser.isEmpty()) {
-                    password.setError("Password tidak boleh kosong!");
-                    return;
-                }
-
-                mAuth.signInWithEmailAndPassword(email, passwordUser)
-                        .addOnSuccessListener(authResult -> {
-                            Toast.makeText(MainActivity.this, "Login Berhasil", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(MainActivity.this, MainActivity3.class));
-                            finish();
-                        })
-                        .addOnFailureListener(e -> {
-                            Toast.makeText(MainActivity.this, "Login Gagal: " + e.getMessage(), Toast.LENGTH_LONG).show();
-                        });
-            });
-
-            signUp.setOnClickListener(view -> {
-                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-                startActivity(intent);
-                finish();
-            });
-
         }
+
+        // Event klik tombol login
+        btnLogin.setOnClickListener(view -> {
+            String email = String.valueOf(username.getText()).trim();
+            String passwordUser = String.valueOf(password.getText()).trim();
+
+            if (email.isEmpty()) {
+                username.setError("Email tidak boleh kosong!");
+                return;
+            }
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                username.setError("Format email tidak valid!");
+                return;
+            }
+            if (passwordUser.isEmpty()) {
+                password.setError("Password tidak boleh kosong!");
+                return;
+            }
+
+            mAuth.signInWithEmailAndPassword(email, passwordUser)
+                    .addOnSuccessListener(authResult -> {
+                        Toast.makeText(MainActivity.this, "Login Berhasil", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(MainActivity.this, MainActivity3.class)); // Perbaikan package
+                        finish();
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(MainActivity.this, "Login Gagal: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                    });
+        });
+
+        // Event klik untuk sign-up
+        signUp.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
+            startActivity(intent);
+            finish();
+        });
     }
 }
-
